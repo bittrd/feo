@@ -1,0 +1,86 @@
+version: 2
+
+defaults: &defaults
+  docker:
+    - image: rdaniels6813/rust-bin:${CIRCLE_JOB}
+  steps:
+    - checkout
+    - run:
+        name: cargo test
+        command: if [ "${CIRCLE_JOB}" = "x86_64-unknown-linux-gnu" ]; then cargo test --release --target=${CIRCLE_JOB}; else echo "skipped tests"; fi
+    - run:
+        name: cargo build
+        command: cargo build --release --target=${CIRCLE_JOB}
+    - run:
+        name: coverage
+        command: if [ "${CIRCLE_JOB}" = "x86_64-unknown-linux-gnu" ]; then cargo tarpaulin --release --ignore-tests -o Xml && bash <(curl -s https://codecov.io/bash); else echo "skipped coverage"; fi
+    - persist_to_workspace:
+        root: /root/project/
+        paths:
+          - target/*/release/rust-hello-world*
+
+jobs:
+  "armv7-unknown-linux-gnueabihf":
+    <<: *defaults
+
+  "x86_64-apple-darwin":
+    <<: *defaults
+
+  "x86_64-pc-windows-gnu":
+    <<: *defaults
+
+  "x86_64-unknown-linux-musl":
+    <<: *defaults
+
+  "x86_64-unknown-linux-gnu":
+    <<: *defaults
+  
+  coverage:
+    machine: true
+    steps:
+      - checkout
+      - run:
+          name: Coverage using docker
+          command: docker run --rm -ti -v "`pwd`:/app" -e CODECOV_TOKEN=${CODECOV_TOKEN} --security-opt seccomp=unconfined rdaniels6813/rust-bin:x86_64-unknown-linux-gnu bash -c "cargo tarpaulin --release --ignore-tests -o Xml && bash <(curl -s https://codecov.io/bash)"
+
+  release:
+    docker:
+      - image: rdaniels6813/semantic-release-alpine:latest
+    steps:
+      - checkout
+      - attach_workspace:
+          # Must be absolute path or relative path from working_directory
+          at: /root/project
+      - run:
+          name: Release
+          command: semantic-release
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - "armv7-unknown-linux-gnueabihf"
+      - "x86_64-apple-darwin"
+      - "x86_64-pc-windows-gnu"
+      - "x86_64-unknown-linux-gnu"
+      - "x86_64-unknown-linux-musl"
+      - coverage:
+          requires:
+            - "x86_64-unknown-linux-musl"
+            - "x86_64-unknown-linux-gnu"
+            - "x86_64-pc-windows-gnu"
+            - "x86_64-apple-darwin"
+            - "armv7-unknown-linux-gnueabihf"
+          filters:
+            branches:
+              only: master
+      - release:
+          requires:
+            - "x86_64-unknown-linux-musl"
+            - "x86_64-unknown-linux-gnu"
+            - "x86_64-pc-windows-gnu"
+            - "x86_64-apple-darwin"
+            - "armv7-unknown-linux-gnueabihf"
+          filters:
+            branches:
+              only: master
