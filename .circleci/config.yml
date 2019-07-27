@@ -17,7 +17,7 @@ defaults: &defaults
     - persist_to_workspace:
         root: /root/project/
         paths:
-          - target/*/release/rust-hello-world*
+          - target/*/release/feo*
 
 jobs:
   "armv7-unknown-linux-gnueabihf":

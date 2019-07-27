@@ -1,5 +1,5 @@
 [package]
-name = "rust-hello-world"
+name = "feo"
 version = "0.1.0"
 authors = ["Ryan Daniels <rdaniels6813@gmail.com>"]
 edition = "2018"
