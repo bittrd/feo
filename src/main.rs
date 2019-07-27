@@ -1,21 +1,18 @@
-fn main() {    
-    format!("Hello, world! {}", add());
-}
+#[macro_use]
+extern crate simple_error;
+#[macro_use]
+extern crate serde_derive;
+extern crate serde;
+extern crate serde_json;
 
-fn add() -> i64 {
-    2+2
-}
-#[cfg(test)]
-mod tests {
-    // Note this useful idiom: importing names from outer (for mod tests) scope.
-    use super::*;
+mod node;
 
-    #[test]
-    fn test_add() {
-        assert_eq!(add(),4)
-    }
-    #[test]
-    fn test_main() {
-        main()
-    }
+use node::Manager;
+use std::error::Error;
+fn main() -> Result<(), Box<Error>> {
+    let manager_path = String::from("~/.feo");
+    let manager = Manager::new(&manager_path);
+    let latest_version = manager.get_latest()?;
+    println!("Latest node version: {}", latest_version);
+    Ok(())
 }

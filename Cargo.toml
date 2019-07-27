@@ -5,3 +5,12 @@ authors = ["Ryan Daniels <rdaniels6813@gmail.com>"]
 edition = "2018"
 
 [dependencies]
+serde = "1.0.97"
+serde_json = "1.0.40"
+serde_derive = "1.0.97"
+simple-error = "0.2.1"
+
+[dependencies.reqwest]
+version = "0.9.19"
+default-features = false
+features = ["rustls-tls"]
