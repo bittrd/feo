@@ -16,17 +16,8 @@ fn main() -> Result<(), Box<Error>> {
     let app_m = clap::App::new("feo")
         .author(crate_authors!())
         .version(crate_version!())
-        .subcommand(
-            SubCommand::with_name("install")
-                .visible_alias("i")
-                .about("Install a CLI for local use")
-                .arg(
-                    Arg::with_name("package")
-                    .help("NPM package name, github URL, binary url base with triplet suffix, or direct path to stand-alone binary")
-                    .index(1)
-                    .required(true)
-                ),
-        )
+        .subcommand(subcommands::install::Command::subcommand())
+        .subcommand(SubCommand::with_name("node").about("Manage node.js used for feo").arg(Arg::with_name("version")))
         .get_matches();
     match app_m.subcommand() {
         ("install", sub_m) => {
