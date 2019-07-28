@@ -20,7 +20,12 @@ fn main() -> Result<(), Box<Error>> {
             SubCommand::with_name("install")
                 .visible_alias("i")
                 .about("Install a CLI for local use")
-                .arg(Arg::with_name("package").help("NPM package name, github URL, binary url base with triplet suffix, or direct path to stand-alone binary").index(1).required(true)),
+                .arg(
+                    Arg::with_name("package")
+                    .help("NPM package name, github URL, binary url base with triplet suffix, or direct path to stand-alone binary")
+                    .index(1)
+                    .required(true)
+                ),
         )
         .get_matches();
     match app_m.subcommand() {
