@@ -11,7 +11,7 @@ use node::Manager;
 use std::error::Error;
 fn main() -> Result<(), Box<Error>> {
     let manager_path = String::from("~/.feo");
-    let manager = Manager::new(&manager_path);
+    let manager = Manager::new(manager_path);
     let latest_version = manager.get_latest()?;
     println!("Latest node version: {}", latest_version);
     Ok(())
