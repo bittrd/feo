@@ -1,5 +1,3 @@
-extern crate reqwest;
-
 use serde_json::Value;
 use std::error::Error;
 
