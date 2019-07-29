@@ -19,7 +19,7 @@ fn main() -> Result<(), Box<Error>> {
         .version(crate_version!())
         .subcommand(subcommands::install::Install::subcommand())
         .get_matches();
-    route_command(app_m);
+    route_command(app_m)?;
     Ok(())
 }
 
@@ -27,7 +27,7 @@ fn route_command(app_m: clap::ArgMatches) -> Result<(),Box<Error>> {
     match app_m.subcommand() {
         ("install", sub_m) => {
             let command = subcommands::install::Install {};
-            command.run(sub_m);
+            command.run(sub_m)?;
         }
         _ => {}
     }

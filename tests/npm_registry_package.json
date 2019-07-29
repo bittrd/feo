@@ -1,0 +1,135 @@
+{
+  "_id": "@bittrd/hello-cli",
+  "_rev": "1-7bcffa472daf08d04ce530a209cf8706",
+  "name": "@bittrd/hello-cli",
+  "dist-tags": { "latest": "2.0.4" },
+  "versions": {
+    "2.0.3": {
+      "name": "@bittrd/hello-cli",
+      "version": "2.0.3",
+      "description": "",
+      "main": "index.js",
+      "bin": { "bittrd-hello": "index.js" },
+      "scripts": { "test": "echo \"Error: no test specified\" && exit 1" },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/bittrd/hello-cli.git"
+      },
+      "author": "",
+      "license": "MIT",
+      "bugs": { "url": "https://github.com/bittrd/hello-cli/issues" },
+      "homepage": "https://github.com/bittrd/hello-cli#readme",
+      "release": {
+        "branch": "master",
+        "plugins": [
+          "@semantic-release/commit-analyzer",
+          "@semantic-release/release-notes-generator",
+          "@semantic-release/changelog",
+          "@semantic-release/npm",
+          "@semantic-release/github",
+          "@semantic-release/git"
+        ]
+      },
+      "devDependencies": {
+        "@semantic-release/changelog": "^3.0.4",
+        "@semantic-release/git": "^7.0.16",
+        "semantic-release": "^15.13.18"
+      },
+      "publishConfig": { "access": "public" },
+      "gitHead": "60a78b467f41c08eb3e0c61d3769182d20345342",
+      "_id": "@bittrd/hello-cli@2.0.3",
+      "_nodeVersion": "10.16.0",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-QI8Q0HIrzUo6D7+oSFX6//2w7zH5JZIfeK6NPNFMPlUjn0qt+vi7Oo0+cshKdQHHGKQc99dpTWjyHXOcu5jDVg==",
+        "shasum": "f365654dd735b25d6abb6969d9c581e29ddeaa80",
+        "tarball": "https://registry.npmjs.org/@bittrd/hello-cli/-/hello-cli-2.0.3.tgz",
+        "fileCount": 4,
+        "unpackedSize": 2440,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdPlYGCRA9TVsSAnZWagAA2w8P/ilCIC1lPUp/ROZS1IvC\ndeiwjL+avpS5yMgYsntKGyXgOztGAJXi9ura867elfRZYqMCHEFNH3H2jIlU\netv3+1bNWVT3g4dBTWL2EoMRqZTxr3/37Y6tWj1QLuQ5wkYAl3wtzD5Qdtn7\n9rhhzDmTbvTmeoMdKrejpxCM8M1O8LF10ZIScKlZ5NL4iH0bSyIzl4XSnmeF\n4Yt1suy/yVgbx1eeM/KZmeaognukYZwEtq9y4LknJrHeOiHephOBleowyKF3\nLHgPq8Y8/2sbs9GeA6cokEePnVlOIuEo/m4RiF/4CBUimiSYN7Ss0tSPCbkd\nAEaSn/G2DRwhSnGU7SXTPOfT6D4P+8exKGOcXkqlOrr/MJs0QpqpTQIDal0o\nV5DVdRzaH+7lp4gITEBaCTqO04zdUc2vSchBU2mG8bxfKyVzkSMcVFg7O8RN\n5a2LcRHn7RHNzn1URHm04eCQv1UibhDzg7TsFAz8SAS6M1r0+eYMLA2rEs6j\nQf2ParZzBhmpkdaA7GUo0Ap9ECZV1LxGqTNevYLShgmiP/bArdviCVenF0b9\nvgdhA2WlXtqFmQOffmjLj4/lsNZvo6r1tyLIWRqykR/ocyyB2pnnKmnNqRCi\n1ExmFW3yi7ITNu25i/sd20pUJRmpd10U6/b+ZFHmRsBzcP0ng2SP3W/FAx+R\nnYlN\r\n=7TYL\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        { "name": "rdaniels", "email": "rdaniels6813@gmail.com" }
+      ],
+      "_npmUser": { "name": "rdaniels", "email": "rdaniels6813@gmail.com" },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/hello-cli_2.0.3_1564366341736_0.19385534908276458"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.4": {
+      "name": "@bittrd/hello-cli",
+      "version": "2.0.4",
+      "description": "",
+      "main": "index.js",
+      "bin": { "bittrd-hello": "index.js" },
+      "scripts": { "test": "echo \"Error: no test specified\" && exit 1" },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/bittrd/hello-cli.git"
+      },
+      "author": "",
+      "license": "MIT",
+      "bugs": { "url": "https://github.com/bittrd/hello-cli/issues" },
+      "homepage": "https://github.com/bittrd/hello-cli#readme",
+      "release": {
+        "branch": "master",
+        "plugins": [
+          "@semantic-release/commit-analyzer",
+          "@semantic-release/release-notes-generator",
+          "@semantic-release/changelog",
+          "@semantic-release/npm",
+          "@semantic-release/github",
+          "@semantic-release/git"
+        ]
+      },
+      "devDependencies": {
+        "@semantic-release/changelog": "^3.0.4",
+        "@semantic-release/git": "^7.0.16",
+        "semantic-release": "^15.13.18"
+      },
+      "publishConfig": { "access": "public" },
+      "engines": { "node": "^8.16.0 || ^10.16.0" },
+      "gitHead": "d1b7b01ac725d441dc6fab41e57e45ddb37632a0",
+      "_id": "@bittrd/hello-cli@2.0.4",
+      "_nodeVersion": "10.16.0",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-/W3UeKMiDyhJsNo4154EpgVEy9hyKENVhGm1WEn5FJIyixHE91/R9fJ2O8mazimOelSyCgX2r+RS7Wl3d3qDDg==",
+        "shasum": "8cf78eaa66ae50d3d0b54e34b0ba4f4ea3fb677e",
+        "tarball": "https://registry.npmjs.org/@bittrd/hello-cli/-/hello-cli-2.0.4.tgz",
+        "fileCount": 4,
+        "unpackedSize": 2691,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdPliaCRA9TVsSAnZWagAApwMP/iXUSBvjak32Pz+HjhCi\n2CvhwT55ISOFuRpeX9JhPONKWn4BL4NhWgTfhuoka/mPSv0hdXboyq9IqyTE\nFQfejAiktXAPv2T30mZAQ+fZVGVJmYzOYpGht4tns24OQMNsYgRSV8dJd4C8\nN0/X+uIxIvGsyENGjmDStopXlE6Cr5K8ni33bu5qrbcLrmahBs1IndBZ4mo4\nY+EJrhwZld9uq4bwHlIgtOOHDf3rVAZxZO3E/vT0IlWqjBVLh+iH75QTa3NG\nc+mR3msxIkINNnV0VGGLb6zdbnIO+0eiPRwliGF3Pr54QHXaGY5SUdQeymIw\nJpT1M8WTLP5YeJAsr86OJTRtK4eEzg4tTmEQw+1mflXEsMZszCzYdGduXWOz\n0XNaQebWlekpKI1nmD0zvLYgsADX9utfCSXsDkS6XQF9KPsI9UxEbSfhCYPH\nDn8sXgLyXUKzneRZMqqh8BmCOAgf7Pb1Vmq8Quyc+huSmh5s8GGXSnOtEvxm\nV2vhwT7rc6cll84Lz2apJG0vFG3p589JO9LgPd6jsF68CqyGHSIby7Qn4iXA\n+e1kwQXceVNoG7/IM7vG6cinBH3igVI4STB8g/hlq72hS6sHIDJY/2F1B/3z\nc65S1HmAVe+9eS7iS+Ian+flc+ovdPRYBxIIkGD9LBmbu+D/pDKGDTU1/tlC\n04Bv\r\n=NXhz\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        { "name": "rdaniels", "email": "rdaniels6813@gmail.com" }
+      ],
+      "_npmUser": { "name": "rdaniels", "email": "rdaniels6813@gmail.com" },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/hello-cli_2.0.4_1564367001630_0.03690188167766495"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2019-07-29T02:12:21.531Z",
+    "2.0.3": "2019-07-29T02:12:21.828Z",
+    "modified": "2019-07-29T02:23:24.245Z",
+    "2.0.4": "2019-07-29T02:23:21.722Z"
+  },
+  "maintainers": [{ "name": "rdaniels", "email": "rdaniels6813@gmail.com" }],
+  "homepage": "https://github.com/bittrd/hello-cli#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bittrd/hello-cli.git"
+  },
+  "bugs": { "url": "https://github.com/bittrd/hello-cli/issues" },
+  "license": "MIT",
+  "readme": "ERROR: No README data found!",
+  "readmeFilename": ""
+}

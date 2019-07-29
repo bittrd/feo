@@ -8,7 +8,7 @@
       "name": "Run Test Debugger",
       "type": "cppvsdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/target/debug/feo-7bd8517fe951dbfc.exe",
+      "program": "${workspaceFolder}/target/debug/feo-701d7c72b02927a4.exe",
       "args": [],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",
