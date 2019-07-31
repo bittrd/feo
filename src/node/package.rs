@@ -20,8 +20,18 @@ impl Package {
     pub fn get_node_range(&self) -> Result<String, Box<Error>> {
         let url = format!("{}/{}", self.registry_url, self.package_name);
         let resp: serde_json::Value = reqwest::get(&url)?.json()?;
-        println!("{}", resp.to_string());
-        Ok(String::from(""))
+        let version = &resp["dist-tags"][&self.tag_or_version];
+        let version_string: &str;
+        match version.as_str() {
+            Some(v) => {version_string = v;},
+            None => {
+            version_string = &self.tag_or_version;},
+        }
+        let engines = &resp["versions"][version_string]["engines"]["node"];
+        match engines.as_str() {
+            Some(e) => Ok(e.to_string()),
+            None => Ok(String::from(">=12")),
+        }
     }
 }
 
@@ -112,7 +122,7 @@ mod tests {
             .create();
         let package = create_package_with_name(String::from("@bittrd/hello-cli@2.0.3"));
         let node_range = package.get_node_range()?;
-        assert_eq!(node_range, "");
+        assert_eq!(node_range, ">=12");
         Ok(())
     }
 }
